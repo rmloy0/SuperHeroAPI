@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const heroRoutes = require('./superheroRoute');
+const heroRoutes = require('./superHeroRoute');
 const villainRoutes = require('./villainRoute');
 
 router.get('/', (req, res) => {
