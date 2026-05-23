@@ -1,0 +1,363 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Super Hero API",
+    "description": "API for superheroes and villains",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/superhero/": {
+      "get": {
+        "tags": [
+          "SuperHeroes"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SuperHeroes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "realName": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "powers": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "team": {
+                  "example": "any"
+                },
+                "numberOfMovies": {
+                  "example": "any"
+                },
+                "powerLevel": {
+                  "example": "any"
+                },
+                "universe": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/superhero/{object_id}": {
+      "get": {
+        "tags": [
+          "SuperHeroes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SuperHeroes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "realName": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "powers": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "team": {
+                  "example": "any"
+                },
+                "numberOfMovies": {
+                  "example": "any"
+                },
+                "powerLevel": {
+                  "example": "any"
+                },
+                "universe": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SuperHeroes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/supervillain/": {
+      "get": {
+        "tags": [
+          "Villains"
+        ],
+        "description": "Get all villains",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Villains"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "realName": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "powers": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "dangerLevel": {
+                  "example": "any"
+                },
+                "numberOfMovies": {
+                  "example": "any"
+                },
+                "isCaptured": {
+                  "example": "any"
+                },
+                "universe": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/supervillain/{object_id}": {
+      "get": {
+        "tags": [
+          "Villains"
+        ],
+        "description": "Get villain",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Villains"
+        ],
+        "description": "update villain",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "realName": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "powers": {
+                  "example": "any"
+                },
+                "city": {
+                  "example": "any"
+                },
+                "dangerLevel": {
+                  "example": "any"
+                },
+                "numberOfMovies": {
+                  "example": "any"
+                },
+                "isCaptured": {
+                  "example": "any"
+                },
+                "universe": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Villains"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "object_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}
