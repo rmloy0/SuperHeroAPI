@@ -45,7 +45,6 @@ const createHero = async (req, res, next) => {
 const updateHero = async (req, res) => {
   try {
     const object_id = req.params.object_id;
-    console.log('BODY update:', req.body);
 
     const updateSuperHero = {
       name: req.body.name,
