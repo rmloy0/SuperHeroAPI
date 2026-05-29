@@ -1,10 +1,11 @@
 const isAuthenticated = (req, res, next) => {
-  console.log('SESSION USER:', req.session.user);
+  console.log('AUTH:', req.isAuthenticated(), req.user);
 
-  if (!req.session.user) {
-    return res.status(401).json('Unauthorized');
+  if (req.isAuthenticated()) {
+    return next();
   }
-  next();
+
+  res.status(401).json('Unauthorized');
 };
 
 module.exports = {

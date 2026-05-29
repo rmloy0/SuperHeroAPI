@@ -29,6 +29,7 @@ router.post(
   validateSuperHero,
   (req, res, next) => {
     // #swagger.tags = ['SuperHeroes']
+    console.log('post ROUTE HIT');
     hero.createHero(req, res, next);
   },
 );
@@ -39,11 +40,13 @@ router.put(
   validateSuperHero,
   (req, res, next) => {
     // #swagger.tags = ['SuperHeroes']
+    console.log('put ROUTE HIT');
     hero.updateHero(req, res, next);
   },
 );
 
 router.delete('/:object_id', isAuthenticated, (req, res, next) => {
+  console.log('DELETE ROUTE HIT');
   // #swagger.tags = ['SuperHeroes']
   hero.deleteHero(req, res, next);
 });

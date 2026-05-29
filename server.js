@@ -81,11 +81,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send(
-    req.session.user
-      ? `Logged in as ${req.session.user.displayName}`
-      : 'Logged Out',
-  );
+  res.send(req.user ? `Logged in as ${req.user.displayName}` : 'Logged Out');
 });
 
 app.get(

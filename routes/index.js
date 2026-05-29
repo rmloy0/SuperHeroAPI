@@ -13,17 +13,10 @@ const villainRoutes = require('./villainRoute');
 router.use('/superhero', heroRoutes);
 router.use('/supervillain', villainRoutes);
 
-router.get('/login', passport.authenticate('github'), (req, res) => {});
-
 router.get('/logout', (req, res, next) => {
   req.logout(function (err) {
     if (err) return next(err);
-
-    req.session.user = undefined;
-
-    req.session.destroy(() => {
-      res.redirect('/');
-    });
+    res.redirect('/');
   });
 });
 
