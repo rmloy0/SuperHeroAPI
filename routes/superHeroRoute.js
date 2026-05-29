@@ -7,6 +7,11 @@ const validateSuperHero = require('../middlewares/validateHeroes');
 
 const { isAuthenticated } = require('../middlewares/authenticate');
 
+console.log('ROUTE FILE LOADED');
+
+console.log('validateSuperHero:', typeof validateSuperHero);
+console.log('isAuthenticated:', typeof isAuthenticated);
+
 router.get('/', (req, res, next) => {
   // #swagger.tags = ['SuperHeroes']
   hero.getAllHeroes(req, res, next);

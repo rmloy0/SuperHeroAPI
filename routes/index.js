@@ -6,9 +6,9 @@ const passport = require('passport');
 const heroRoutes = require('./superHeroRoute');
 const villainRoutes = require('./villainRoute');
 
-router.get('/', (req, res) => {
-  res.send('Welcome to Super Hero Project API');
-});
+// router.get('/', (req, res) => {
+//   res.send('Welcome to Super Hero Project API');
+// });
 
 router.use('/superhero', heroRoutes);
 router.use('/supervillain', villainRoutes);
@@ -18,7 +18,12 @@ router.get('/login', passport.authenticate('github'), (req, res) => {});
 router.get('/logout', (req, res, next) => {
   req.logout(function (err) {
     if (err) return next(err);
-    res.redirect('/');
+
+    req.session.user = undefined;
+
+    req.session.destroy(() => {
+      res.redirect('/');
+    });
   });
 });
 
